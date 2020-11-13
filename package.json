@@ -1,0 +1,36 @@
+{
+  "name": "near-by-news",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.2.5",
+    "@material-ui/core": "^4.11.0",
+    "@wordpress/base-styles": "2.0.0",
+    "@wordpress/block-library": "2.22.0",
+    "bootstrap": "4.5.2",
+    "graphql": "^15.4.0",
+    "isomorphic-fetch": "^3.0.0",
+    "js-search": "2.0.0",
+    "lodash": "^4.17.20",
+    "next": "10.0.1",
+    "nextjs-progressbar": "^0.0.7",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "react-js-pagination": "3.0.3",
+    "react-lazy-load-image-component": "1.5.0",
+    "sass": "^1.29.0",
+    "sass-mq": "5.0.1",
+    "slick-carousel": "1.8.1",
+    "uuid": "^8.3.1"
+  },
+  "devDependencies": {
+    "file-loader": "^6.2.0",
+    "image-webpack-loader": "^7.0.1",
+    "prettier": "2.1.2"
+  }
+}

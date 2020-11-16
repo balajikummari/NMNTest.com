@@ -4,7 +4,7 @@ import Search from "../../components/home/search";
 import { Container, Box } from "@material-ui/core";
 
 
-const RenderProductsPage = (props) => {
+const RenderBrandsPage = (props) => {
     const {
         page: { title, seo, uri },
         categories,
@@ -33,7 +33,7 @@ const RenderProductsPage = (props) => {
                                     engine={options}
                                     category={categoryName}
                                     categories={categories}
-                                    isfor='Products'
+                                    isfor='Brands'
                                 />
                             </Box>
                         </Container>
@@ -47,7 +47,7 @@ const RenderProductsPage = (props) => {
 }
 
 
-export default RenderProductsPage;
+export default RenderBrandsPage;
 
 
 const pageContext = {

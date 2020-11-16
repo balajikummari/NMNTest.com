@@ -4,8 +4,9 @@ import AddToCartButton from "../cart/add-to-cart-button";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { isEmpty } from "lodash";
-import "./product.module.scss";
+import { Box, Typography, Paper } from "@material-ui/core";
 // import AddToWishList from "../wishlist/add-to-wishlist";
+import Rating from '@material-ui/lab/Rating';
 
 const productImagePlaceholder = "https://via.placeholder.com/434";
 
@@ -26,39 +27,46 @@ const Product = (props) => {
 
   return (
     // @TODO Need to handle Group products differently.
-    !isEmpty(product) && "GroupProduct" !== product.nodeType ? (
-      <div className="col-lg-4 col-md-6 mb-5">
-        <div className="product-image">
-          {!isEmpty(product.image) ? (
-            <figure>
-              <LazyLoadImage
-                alt={product.image.altText ? product.image.altText : ""}
-                height={imgHeight}
-                src={imgSrcUrl} // use normal <img> attributes as props
-                width={imgWidth}
-                effect="blur"
-              />
-            </figure>
-          ) : !isEmpty(productImagePlaceholder) ? (
-            <figure>
-              <LazyLoadImage
-                alt="default"
-                height="450"
-                src={productImagePlaceholder}
-                width="450"
-                effect="blur"
-              />
-            </figure>
-          ) : null}
-        </div>
-        <div className="card-body text-center">
-          <h3 className="card-header">{product.name ? product.name : ""}</h3>
-          <h6 className="card-subtitle">{product.price}</h6>
-          <AddToCartButton product={product} />
-          {/* <AddToWishList product={product} /> */}
-        </div>
-      </div>
-    ) : null
+
+    <Paper style={{ display: 'flex', width: '100%' }}>
+      <Box style={{
+        display: "flex",
+        alignItems: "center",
+        padding: "0rem 0.2rem"
+      }}>
+        {!isEmpty(product.image) ? (
+
+          <LazyLoadImage
+            alt={product.image.altText ? product.image.altText : ""}
+            height='200px'
+            src={imgSrcUrl} // use normal <img> attributes as props
+            width='auto'
+            effect="blur"
+          />
+        ) : !isEmpty(productImagePlaceholder) ? (
+
+          <LazyLoadImage
+            alt="default"
+            height="300px"
+            src={productImagePlaceholder}
+            width="auto"
+            effect="blur"
+          />
+
+        ) : null}
+      </Box>
+      <Box display="flex" flexDirection='column' alignItems="center">
+        <Typography variant='h6' style={{ padding: '0.7rem 0rem' }} >{product.name ? product.name : ""}</Typography>
+        <Typography variant='h3' style={{ padding: '0.7rem 0rem' }} >B</Typography>
+        <Rating defaultValue={2} />
+        <Typography variant='subtitle1' style={{ padding: '0.7rem 0rem' }} >800 Reviews</Typography>
+
+        {/* <Typography variant='h5' style={{ padding: '0.5rem 0rem' }}>{product.price}</Typography> */}
+        {/* <AddToCartButton product={product} /> */}
+        {/* <AddToWishList product={product} /> */}
+      </Box>
+    </Paper>
+
   );
 };
 

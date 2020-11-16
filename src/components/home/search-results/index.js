@@ -1,7 +1,6 @@
 import React from 'react';
 import { isEmpty } from 'lodash';
 import Products from "../products";
-import styles from './searchResults.module.scss';
 
 const SearchResults = ({ queryResults, initialProducts }) => {
 
@@ -13,7 +12,7 @@ const SearchResults = ({ queryResults, initialProducts }) => {
 	const productsToBeDisplayed = !isEmpty(queryResults) ? queryResults : initialProducts;
 
 	return (
-		<div className="search-results">
+		<div style={{ width: "100%", marginTop: "30px" }}>
 			<Products products={productsToBeDisplayed} />
 		</div>
 	);

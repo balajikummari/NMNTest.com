@@ -1,15 +1,20 @@
 import React, { useState, useEffect } from "react";
 import Pagination from "react-js-pagination";
+import styles from "./style";
 
 import Product from "../../product";
-import styles from "./products.module.scss";
+import { Container, Grid, makeStyles } from "@material-ui/core";
+const useStyles = makeStyles(styles);
+
 
 const Products = (props) => {
   const { products } = props;
   const [activePage, setActivePage] = useState(1);
   const [currentProducts, setCurrentProducts] = useState(null);
-  const productsPerPage = 6;
+  const productsPerPage = 12;
   const pageRange = 10;
+  const classes = useStyles();
+
 
   /**
    * Whenever the products length changes,
@@ -61,24 +66,27 @@ const Products = (props) => {
   }
 
   return (
-    <div className="container">
-      <div className="product-container row">
+    <Container disableGutters>
+      <Grid container spacing={3}>
         {currentProducts.map((product) => (
-          <Product key={product.id} product={product} />
+          <Grid item xs={12} sm={12} md={4}>
+            <Product key={product.id} product={product} />
+          </Grid>
         ))}
-      </div>
+      </Grid>
       <Pagination
         activePage={activePage}
         itemsCountPerPage={productsPerPage}
         totalItemsCount={products.length}
         pageRangeDisplayed={pageRange}
         onChange={handlePageChange}
-        itemClass={"page-item"}
-        linkClass={"page-link"}
+        itemClass={classes.pageItem}
+        linkClass={classes.pageLink}
         prevPageText={"Previous"}
         nextPageText={"Next"}
+        className={classes.pagination}
       />
-    </div>
+    </Container>
   );
 };
 

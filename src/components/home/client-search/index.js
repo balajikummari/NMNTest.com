@@ -1,11 +1,17 @@
 import React, { Component } from "react";
 import * as JsSearch from "js-search";
-import styles from "./clientSearch.module.scss";
 import SearchResults from "../search-results";
 import Categories from "../categories";
 import SearchIcon from "../../icons/search-icon";
+import { Box, makeStyles } from "@material-ui/core";
+
+import styles from "./style";
+
+const useStyles = makeStyles(styles);
 
 class ClientSearch extends Component {
+
+
   state = {
     isLoading: true,
     searchResults: [],
@@ -124,24 +130,54 @@ class ClientSearch extends Component {
     const { searchResults, searchQuery } = this.state;
     const { placeholder, categories, category, initialProducts } = this.props;
 
+
     const queryResults = searchResults;
 
     return (
       <>
-        <form className="search-form" onSubmit={this.handleSubmit}>
-          <label htmlFor="Search" className="screen-reader-text">
-            Enter your search here
-          </label>
-          <input
-            id="Search"
-            className="search-input"
-            value={searchQuery}
-            onChange={this.searchData}
-            placeholder={placeholder}
-            autoComplete="on" // removes the autosearch suggestions
-          />
-          <SearchIcon />
-        </form>
+        <Box style={{ width: '100%', display: 'flex', justifyContent: "center", alignItems: "center" }} >
+
+          <form onSubmit={this.handleSubmit}
+            style={{
+              background: '#f5f5f6',
+              color: 'rgba(0,0,0,.5)',
+              width: "100%",
+              maxWidth: "750px",
+              background: "#f5f5f6",
+              padding: "16px 28px",
+              border: "none",
+              borderRadius: "5px",
+              fontSize: "20px",
+              color: "#757575",
+              boxShadow: "0 1rem 2rem rgba(0,0,0,.1)",
+              display: 'flex'
+            }}
+          >
+            <input
+              id="Search"
+              className="search-input"
+              value={searchQuery}
+              onChange={this.searchData}
+              placeholder={placeholder}
+              autoComplete="on" // removes the autosearch suggestions
+              style={{
+                outline: 'none',
+                background: '#f5f5f6',
+                color: 'rgba(0,0,0,.5)',
+                width: "100%",
+                // maxWidth: "750px",
+                background: "#f5f5f6",
+                padding: "16px 28px",
+                border: "none",
+                borderRadius: "5px",
+                fontSize: "20px",
+                color: "#757575",
+              }}
+            />
+            <SearchIcon />
+          </form>
+        </Box>
+
         <Categories categories={categories} category={category} />
         <SearchResults
           queryResults={queryResults}

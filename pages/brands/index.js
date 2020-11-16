@@ -2,14 +2,12 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 
 import client from '../../src/apollo/client';
+import RenderBrandsPage from '../../src/pages/BrandsPage';
 
 
 export default function BrandsPage(props) {
 
-    return (
-        <div>
-            Brands Page
-        </div>);
+    return (<RenderBrandsPage />);
 }
 
 

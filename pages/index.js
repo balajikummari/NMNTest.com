@@ -1,10 +1,5 @@
-
-import Link from 'next/link'
+import HomePage from '../src/pages/HomePage'
 
 export default function Home() {
-  return (
-    <div >
-      Home
-    </div >
-  )
+  return (<HomePage />)
 }

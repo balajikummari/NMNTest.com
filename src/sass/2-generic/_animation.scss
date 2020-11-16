@@ -1,9 +1,0 @@
-.gallery-item {
-	img {
-		transition: transform .5s; /* Animation */
-
-		&:hover {
-			transform: scale(1.5);
-		}
-	}
-}

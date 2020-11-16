@@ -6,7 +6,6 @@
 import { v4 } from "uuid";
 // import GET_CART from "../../../queries/get-cart";
 // import ADD_TO_CART from "../../../mutations/add-to-cart";
-import "./addToCart.module.scss";
 
 const AddToCart = (props) => {
   const { product } = props;

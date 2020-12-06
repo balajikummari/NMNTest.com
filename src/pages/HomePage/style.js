@@ -10,10 +10,10 @@ const styles = (theme) => ({
     cursor: "pointer",
 
     borderRadius: "0px",
-    boxShadow: "0 1px 3px 0 rgba(0,0,0,0.07)",
+    boxShadow: "0px 1px 20px 1px hsla(213, 33%, 68%, .6)",
     backgroundColor: "#fff",
     "&:hover": {
-      boxShadow: "0 6px 12px 0 rgba(0,0,0,0.15)",
+      boxShadow: "0px 1px 20px 1px hsla(213, 33%, 68%, .6)",
     },
   },
 });

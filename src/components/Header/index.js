@@ -15,7 +15,10 @@ import PropTypes from "prop-types";
 import React from "react";
 import AppBarCollapse from "./AppBarCollapse";
 import useDarkMode from "use-dark-mode";
-const styles = {
+import { useUser } from "../../../lib/hooks";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
@@ -29,13 +32,12 @@ const styles = {
   navigation: {},
   toggleDrawer: {},
   appTitle: {},
-};
+}));
 
 function Header(props) {
-  const { classes } = props;
-  const darkMode = useDarkMode();
-  // console.log('darkMode.value in had : ',darkMode.value)
+  const classes = useStyles();
 
+  const user = useUser();
   return (
     <AppBar position="fixed" color="default" className={classes.navigation}>
       <Toolbar style={{ justifyContent: "space-around" }} alignItems="center">
@@ -51,17 +53,52 @@ function Header(props) {
             </Typography>
           </Link>
         </Box>
-        <Hidden smUp>
-          {/* <Button onClick={darkMode.toggle} style={{ marginRight: '3rem', fontSize: '1.2rem' }} >
-            {darkMode.value ? '🌛' : '🌞'}
-          </Button> */}
-        </Hidden>
-        {/* <Page /> */}
 
-        <AppBarCollapse allTopics={props.allTopics} />
+        <Hidden mdDown>
+          <Box display="flex" className={classes.buttonBar}>
+            <Button style={{ padding: "0.5rem 1rem" }}>
+              <Typography variant="subtitle1">
+                <Box fontWeight={400}>About</Box>
+              </Typography>
+            </Button>
+            <Button style={{ padding: "0.5rem 1rem" }}>
+              <Typography variant="subtitle1">
+                <Box fontWeight={400}>Resources</Box>
+              </Typography>
+            </Button>
+            <Button style={{ padding: "0.5rem 1rem" }}>
+              <Typography variant="subtitle1">
+                <Box fontWeight={400}>Testing Services</Box>
+              </Typography>
+            </Button>
+            <Button style={{ padding: "0.5rem 1rem" }}>
+              <Typography variant="subtitle1">
+                <Box fontWeight={400}>Contact</Box>
+              </Typography>
+            </Button>
+            {user ? (
+              <a href="/api/logout">
+                <Button style={{ padding: "0rem 1rem", paddingTop: "0.8rem" }}>
+                  <Typography variant="subtitle1">
+                    <Box fontWeight={400}>Log Out</Box>
+                  </Typography>
+                </Button>
+              </a>
+            ) : (
+              <div />
+            )}
+            <Button style={{ padding: "0.5rem 1rem" }}>
+              <Link href="/profile">
+                <Typography variant="body1">
+                  <Avatar>{user?.username[0] || "?"}</Avatar>
+                </Typography>
+              </Link>
+            </Button>
+          </Box>
+        </Hidden>
       </Toolbar>
     </AppBar>
   );
 }
 
-export default withStyles(styles)(Header);
+export default Header;

@@ -5,12 +5,12 @@ import {
   Grid,
   Paper,
   Card,
-  Link,
   Container,
 } from "@material-ui/core";
 import Layout from "../../components/layout";
 import styles from "./style";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const useStyles = makeStyles(styles);
 
@@ -54,7 +54,14 @@ const HomePage = (props) => {
                     }}
                     className={classes.parentBox}
                   >
-                    <Typography>Products</Typography>
+                    <Typography
+                      variant="h4"
+                      style={{
+                        fontWeight: 600,
+                      }}
+                    >
+                      Products
+                    </Typography>
                   </Card>
                 </motion.div>
               </Link>
@@ -88,7 +95,14 @@ const HomePage = (props) => {
                   >
                     <Typography>
                       <Link as="/brands" href="/brands" color="inherit">
-                        Brands
+                        <Typography
+                          variant="h5"
+                          style={{
+                            fontWeight: 600,
+                          }}
+                        >
+                          Brands
+                        </Typography>
                       </Link>
                     </Typography>
                   </Card>
@@ -113,9 +127,14 @@ const HomePage = (props) => {
                     className={classes.parentBox}
                   >
                     <Typography>
-                      <Link as="/suppliers" href="/suppliers" color="inherit">
+                      <Typography
+                        variant="h5"
+                        style={{
+                          fontWeight: 600,
+                        }}
+                      >
                         Suppliers
-                      </Link>
+                      </Typography>
                     </Typography>
                   </Card>
                 </motion.div>

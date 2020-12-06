@@ -2,7 +2,14 @@ import { useUser } from "../lib/hooks";
 import Layout from "../src/components/layout";
 import { GetUsers, UpdateUser, CreateRecord, GetRecords } from "../graphql/api";
 import React from "react";
-import { Container, Typography, Box, Grid, Paper } from "@material-ui/core";
+import {
+  Container,
+  Typography,
+  Box,
+  Grid,
+  Paper,
+  Button,
+} from "@material-ui/core";
 import { useForm } from "react-hook-form";
 
 const Profile = () => {
@@ -116,7 +123,7 @@ const Profile = () => {
           font-size: 14px;
         }
 
-        input[type="submit"],
+        button[type="submit"],
         .button {
           background: #ec5990;
           color: white;
@@ -132,6 +139,7 @@ const Profile = () => {
           border-radius: 4px;
           width: 100%;
           font-weight: lighter;
+          cursor: pointer;
         }
       `}</style>
       <Container maxWidth="md">
@@ -187,7 +195,7 @@ const Profile = () => {
                 placeholder="How can we reach you"
               />
 
-              <input type="submit" />
+              <button type="submit">Update</button>
             </form>
           </Grid>
           <Grid item md={5}>
@@ -214,7 +222,7 @@ const Profile = () => {
                 placeholder="How are you feeling ?"
               />
 
-              <input type="submit" />
+              <button type="submit">Log</button>
             </form>
             <h2>Daily Logs</h2>
             <Box>
@@ -229,7 +237,7 @@ const Profile = () => {
                     <Box>{`Product : ${record.productConsumed}`}</Box>
                     <Box>{`Quantity : ${record.amountConsumed}`}</Box>
                   </Box>
-                  <Box px={2} py={1} ml={5}>{`${record.date}`}</Box>
+                  <Box px={1} ml={5}>{`${record.date}`}</Box>
                   <Box px={2} py={1} ml={5}>
                     {record.review}
                   </Box>

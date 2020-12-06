@@ -39,6 +39,7 @@ export default function SuppliersPage(props) {
                         sm={12}
                         md={4}
                         onClick={() => setSupplier(supplier)}
+                        style={{ cursor: "pointer" }}
                       >
                         <Paper
                           style={{ display: "flex", width: "100%" }}

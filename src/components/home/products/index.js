@@ -72,18 +72,6 @@ const Products = (props) => {
           </Grid>
         ))}
       </Grid>
-      {/* <Pagination
-        activePage={activePage}
-        itemsCountPerPage={productsPerPage}
-        totalItemsCount={products.length}
-        pageRangeDisplayed={pageRange}
-        onChange={handlePageChange}
-        itemClass={classes.pageItem}
-        linkClass={classes.pageLink}
-        prevPageText={"Previous"}
-        nextPageText={"Next"}
-        className={classes.pagination}
-      /> */}
     </Container>
   );
 };

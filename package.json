@@ -1,5 +1,5 @@
 {
-  "name": "near-by-news",
+  "name": "nmntest",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -19,6 +19,7 @@
     "bootstrap-less": "^3.3.8",
     "cookie": "0.4.1",
     "faunadb": "2.11.1",
+    "framer-motion": "^2.9.5",
     "graphql": "^15.4.0",
     "iframe-resizer-react": "^1.0.4",
     "isomorphic-fetch": "^3.0.0",
@@ -40,6 +41,7 @@
     "react-leaflet": "^3.0.2",
     "request": "2.88.0",
     "slick-carousel": "1.8.1",
+    "slugify": "^1.4.6",
     "stream-to-promise": "2.2.0",
     "swr": "0.3.0",
     "use-dark-mode": "^2.3.1",

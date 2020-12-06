@@ -142,7 +142,7 @@ const Profile = () => {
           cursor: pointer;
         }
       `}</style>
-      <Container maxWidth="md">
+      <Container maxWidth="md" style={{ padding: "1rem" }}>
         <h1>Profile</h1>
         <Grid container spacing={5}>
           <Grid item md={5}>

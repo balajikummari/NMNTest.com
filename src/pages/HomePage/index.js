@@ -25,7 +25,7 @@ const HomePage = (props) => {
             container
             spacing={3}
             display="flex"
-            style={{ height: "93vh", justifyContent: "center" }}
+            style={{ height: "82vh", justifyContent: "center" }}
           >
             <Grid
               item

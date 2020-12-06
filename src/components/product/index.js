@@ -76,8 +76,10 @@ const Product = (props) => {
             <LazyLoadImage
               alt="default"
               height="120px"
-              src={product.ImageLink}
-              width="auto"
+              src={
+                section === "product" ? product.ImageLink : product.BrandLogo
+              }
+              width={section === "product" ? "auto" : "150px"}
               effect="blur"
             />
           </Box>

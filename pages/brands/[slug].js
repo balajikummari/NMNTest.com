@@ -6,6 +6,8 @@ import { useRouter } from "next/router";
 import slugify from "slugify";
 import { productsData } from "../../src/productsData";
 import React from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
 export default function BrandsPage(props) {
   const router = useRouter();
   const { slug } = router.query;
@@ -16,6 +18,10 @@ export default function BrandsPage(props) {
   const [products, setProducts] = React.useState(filterdProductsData);
 
   const [searchTerm, setSearchterm] = React.useState();
+
+  const brand = brandsData.filter(
+    (brand) => slugify(brand.Company) === slug
+  )[0];
 
   React.useEffect(() => {
     if (searchTerm) {
@@ -45,6 +51,13 @@ export default function BrandsPage(props) {
         `}</style>
         <Container disableGutters>
           <Box px={6}>
+            <LazyLoadImage
+              alt="default"
+              height="120px"
+              src={brand.BrandLogo}
+              width="auto"
+              effect="blur"
+            />
             <h1>{slug}</h1>
             <input
               name="productConsumed"

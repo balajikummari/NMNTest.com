@@ -4,7 +4,7 @@ import AddToCartButton from "../cart/add-to-cart-button";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { isEmpty } from "lodash";
-import { Box, Typography, Paper } from "@material-ui/core";
+import { Box, Typography, Paper, Link } from "@material-ui/core";
 // import AddToWishList from "../wishlist/add-to-wishlist";
 import Rating from '@material-ui/lab/Rating';
 
@@ -27,7 +27,7 @@ const Product = (props) => {
 
   return (
     // @TODO Need to handle Group products differently.
-
+    <Link href ={'/products/' + product.id } color='inherit' underline='none' >
     <Paper style={{ display: 'flex', width: '100%' }}>
       <Box style={{
         display: "flex",
@@ -66,6 +66,7 @@ const Product = (props) => {
         {/* <AddToWishList product={product} /> */}
       </Box>
     </Paper>
+    </Link>
 
   );
 };

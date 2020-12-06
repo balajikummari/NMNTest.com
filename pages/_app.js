@@ -40,7 +40,7 @@ export default function MyApp(props) {
             options={{ easing: 'ease', speed: 500 }} ya
             color="#29D"
             startPosition={0.3}
-            stopDelayMs={200}
+            stopDelayMs={150}
             height="3"
           />
           <Component {...pageProps} />

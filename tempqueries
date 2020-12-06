@@ -1,0 +1,75 @@
+mutation CreateUser(
+  $username :String!,
+  $password :String!,
+  $preferredBrand :String!,
+  $about :String!,
+  $trueAge :String!,
+  $biologicalAge :String!,
+  $country :String!,
+  $sex :String!,
+   $contactInfo :String!,
+
+) {
+   createUser(data: {
+   username:$username
+   password:$password
+    preferredBrand:$preferredBrand
+    about:$about
+    trueAge:$trueAge
+    biologicalAge:$biologicalAge
+    country:$country
+    sex:$sex
+    contactInfo:$contactInfo
+   }) {
+    _id
+    username
+    password
+    preferredBrand
+    about
+    trueAge
+    biologicalAge
+    country
+    sex
+    contactInfo
+   }
+}
+
+
+mutation updateUser(
+  $username :String!,
+  $password :String!,
+  $preferredBrand :String!,
+  $about :String!,
+  $trueAge :String!,
+  $biologicalAge :String!,
+  $country :String!,
+  $sex :String!,
+  $contactInfo :String!,
+	$id : ID!
+) {
+   updateUser(id :$id,data: {
+   username:$username
+   password:$password
+    preferredBrand:$preferredBrand
+    about:$about
+    trueAge:$trueAge
+    biologicalAge:$biologicalAge
+    country:$country
+    sex:$sex
+    contactInfo:$contactInfo
+  }) {
+    _id
+    username
+    password
+    preferredBrand
+    about
+    trueAge
+    biologicalAge
+    country
+    sex
+    contactInfo
+   }
+}
+
+
+

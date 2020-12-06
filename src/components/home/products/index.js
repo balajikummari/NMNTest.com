@@ -6,15 +6,13 @@ import Product from "../../product";
 import { Container, Grid, makeStyles } from "@material-ui/core";
 const useStyles = makeStyles(styles);
 
-
 const Products = (props) => {
   const { products } = props;
   const [activePage, setActivePage] = useState(1);
   const [currentProducts, setCurrentProducts] = useState(null);
-  const productsPerPage = 12;
+  const productsPerPage = 120;
   const pageRange = 10;
   const classes = useStyles();
-
 
   /**
    * Whenever the products length changes,
@@ -74,7 +72,7 @@ const Products = (props) => {
           </Grid>
         ))}
       </Grid>
-      <Pagination
+      {/* <Pagination
         activePage={activePage}
         itemsCountPerPage={productsPerPage}
         totalItemsCount={products.length}
@@ -85,7 +83,7 @@ const Products = (props) => {
         prevPageText={"Previous"}
         nextPageText={"Next"}
         className={classes.pagination}
-      />
+      /> */}
     </Container>
   );
 };

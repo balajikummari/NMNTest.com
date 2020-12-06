@@ -1,6 +1,5 @@
 import Layout from "../../components/layout";
 import { isEmpty } from "lodash";
-import Search from "../../components/home/search";
 import { Container, Box, Grid } from "@material-ui/core";
 import Product from "../../components/product";
 import { brandsData } from "../../brandsData";

@@ -7,7 +7,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header />
-      <Box pt={10} style={{ background: "#f2f3f8", minHeight: "100vh" }}>
+      <Box pt={10} style={{ background: "#f2f3f8", minHeight: "93vh" }}>
         <main>{children}</main>
       </Box>
       <Footer />

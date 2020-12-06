@@ -1,7 +1,4 @@
-import { useRouter } from "next/router";
-import Head from "next/head";
 import React from "react";
-import client from "../../src/apollo/client";
 import Layout from "../../src/components/layout";
 import { Box, Paper, Typography, Container, Grid } from "@material-ui/core";
 import { LazyLoadImage } from "react-lazy-load-image-component";
@@ -11,7 +8,7 @@ import dynamic from "next/dynamic";
 export default function SuppliersPage(props) {
   const [selectedSupplier, setSupplier] = React.useState(suppliers[0]);
   const position = [51.505, -0.09];
-  const DynamicMap = dynamic(() => import("./map"), { ssr: false });
+  const DynamicMap = dynamic(() => import("../../src/map"), { ssr: false });
 
   return (
     <div>

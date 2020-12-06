@@ -7,6 +7,7 @@ import {
   Card,
   Link,
   Button,
+  Container,
 } from "@material-ui/core";
 import Layout from "../../components/layout";
 import styles from "./style";
@@ -36,7 +37,7 @@ const RenderProductPage = (props) => {
           container
           spacing={4}
           display="flex"
-          style={{ height: "93vh", width: "100vw", justifyContent: "center" }}
+          style={{ height: "93vh", justifyContent: "center" }}
         >
           <Grid
             item
